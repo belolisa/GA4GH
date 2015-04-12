@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
  * Created by Elizaveta Belokopytova.
  */
 
-@Repository
 public class ReadDAOImpl extends AbstractDocumentDAO<Read> implements ReadDAO {
 
     @Override

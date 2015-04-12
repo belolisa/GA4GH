@@ -1,11 +1,15 @@
 package com.emc.ga4gh.DTO;
 
 import javax.persistence.Id;
+import javax.persistence.Version;
 
 /**
  * Created by Elizaveta Belokopytova.
  */
 public class Read implements OEntity {
+
+    @Version
+    private int version;
 
     @Id
     private String rid;
