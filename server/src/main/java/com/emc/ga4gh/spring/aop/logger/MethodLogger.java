@@ -30,7 +30,8 @@ public class MethodLogger {
         Object result = point.proceed();
         logger.info(
                 String.format(
-                        "#%s(%s): %s in %s millis",
+                        "%s#%s(%s): %s in %s millis",
+                        MethodSignature.class.cast(point.getSignature()).getMethod().getDeclaringClass(),
                         MethodSignature.class.cast(point.getSignature()).getMethod().getName(),
                         Arrays.asList(point.getArgs()),
                         result,

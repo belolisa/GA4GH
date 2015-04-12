@@ -1,5 +1,7 @@
-package com.emc.ga4gh.DAO;
+package com.emc.ga4gh.DAO.document;
 
+import com.emc.ga4gh.DAO.CrudDAO;
+import com.emc.ga4gh.DAO.OTransacrional;
 import com.emc.ga4gh.DTO.OEntity;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
@@ -7,13 +9,11 @@ import com.orientechnologies.orient.core.record.impl.ODocument;
  * Created by Elizaveta Belokopytova.
  */
 
-public abstract class AbstractDocumentDAO<T extends OEntity> implements DocumentDAO<T> {
-
-//    private static final Logger logger = LoggerFactory.getLogger(ObjectDAO.class);
+@OTransacrional
+public abstract class AbstractDocumentDAO<T extends OEntity> implements CrudDAO<T> {
 
     @Override
     public String create(T newInstance) {
-//        logger.debug("DocumentDAO.create invoked");
         ODocument document = createDocument(newInstance);
         document = document.save();
         return document.getIdentity().toString();

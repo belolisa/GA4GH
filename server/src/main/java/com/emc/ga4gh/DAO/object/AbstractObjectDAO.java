@@ -1,9 +1,9 @@
-package com.emc.ga4gh.DAO;
+package com.emc.ga4gh.DAO.object;
 
+import com.emc.ga4gh.DAO.CrudDAO;
+import com.emc.ga4gh.DAO.OTransacrional;
 import com.emc.ga4gh.DTO.OEntity;
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -11,11 +11,12 @@ import org.springframework.stereotype.Repository;
  * Created by Elizaveta Belokopytova.
  */
 
+@OTransacrional
 @Repository
-public class ObjectDAO<T extends OEntity> implements CrudDAO<T, String> {
+public abstract class AbstractObjectDAO<T extends OEntity> implements CrudDAO<T> {
 
     @Autowired
-    OObjectDatabaseTx db;
+    protected OObjectDatabaseTx db;
 
     @Override
     public String create(T newInstance) {

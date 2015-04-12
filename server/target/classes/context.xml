@@ -9,7 +9,7 @@
 
     <context:annotation-config/>
 
-    <bean name="orient" class="com.orientechnologies.orient.object.db.OObjectDatabaseTx">
+    <bean class="com.orientechnologies.orient.object.db.OObjectDatabaseTx">
         <constructor-arg value="${o.url}"/>
     </bean>
 
@@ -17,8 +17,6 @@
         <property name="location" value="orient.properties"/>
     </bean>
 
-    <bean class="com.emc.ga4gh.spring.OBeanPostProcessor"/>
-    
     <aop:aspectj-autoproxy/>
 
 </beans>

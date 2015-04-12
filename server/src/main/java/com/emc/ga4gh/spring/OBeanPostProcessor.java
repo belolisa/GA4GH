@@ -4,11 +4,13 @@ import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Elizaveta Belokopytova.
  */
 
+@Component
 public class OBeanPostProcessor implements BeanPostProcessor {
 
     @Value("${o.password}")
@@ -24,15 +26,11 @@ public class OBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object o, String s) throws BeansException {
-
-        System.out.println("s = " + s);
-
         if (o instanceof OObjectDatabaseTx) {
             OObjectDatabaseTx db = ((OObjectDatabaseTx) o).open(user, password);
             db.getEntityManager().registerEntityClasses("com.emc.ga4gh.DTO");
             return db;
         }
-        System.out.println("bean post processor invoked");
         return o;
     }
 }

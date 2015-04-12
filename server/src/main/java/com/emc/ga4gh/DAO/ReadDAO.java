@@ -1,11 +1,10 @@
 package com.emc.ga4gh.DAO;
 
 import com.emc.ga4gh.DTO.Read;
-import org.springframework.stereotype.Repository;
 
 /**
  * Created by liza on 12.04.15.
  */
 
-public interface ReadDAO extends DocumentDAO<Read> {
+public interface ReadDAO extends CrudDAO<Read> {
 }
