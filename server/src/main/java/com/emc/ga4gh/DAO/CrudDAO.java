@@ -8,7 +8,7 @@ import com.emc.ga4gh.DTO.OEntity;
 
 public interface CrudDAO<T extends OEntity> {
 
-    String create(T newInstance);
+    T create(T newInstance);
 
     T read(String id);
 

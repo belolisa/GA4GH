@@ -21,7 +21,7 @@ public class ReadDAOImpl extends AbstractDocumentDAO<Read> implements ReadDAO {
 
     @Log
     @Override
-    public String create(Read newInstance) {
+    public Read create(Read newInstance) {
         return super.create(newInstance);
     }
 

@@ -19,9 +19,8 @@ public abstract class AbstractObjectDAO<T extends OEntity> implements CrudDAO<T>
 
     @Override
     @Log
-    public String create(T newInstance) {
-        T entity = db.save(newInstance);
-        return entity.toString();
+    public T create(T newInstance) {
+        return db.save(newInstance);
     }
 
     @Override

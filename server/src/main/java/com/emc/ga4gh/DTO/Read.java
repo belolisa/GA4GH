@@ -9,7 +9,7 @@ import javax.persistence.Version;
 public class Read implements OEntity {
 
     @Version
-    private int version;
+    private Integer version;
 
     @Id
     private String rid;
@@ -42,5 +42,13 @@ public class Read implements OEntity {
                 "rid='" + rid + '\'' +
                 ", path='" + path + '\'' +
                 '}';
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
     }
 }

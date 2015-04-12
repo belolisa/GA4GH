@@ -1,7 +1,6 @@
 package com.emc.ga4gh.DAO;
 
 import com.emc.ga4gh.DTO.Read;
-import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,8 +23,8 @@ public class ReadDAOTest {
 //        Read read = db.newInstance(Read.class);
         Read read = new Read();
         read.setPath("/path");
-        read.setRid("#12:-1");
-        String rid = rd.create(read);
-        System.out.println("rid = " + rid);
+//        read.setRid("#12:-1");
+        read = rd.create(read);
+        System.out.println("rid = " + read.getRid());
     }
 }

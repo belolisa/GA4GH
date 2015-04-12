@@ -13,10 +13,11 @@ import com.orientechnologies.orient.core.record.impl.ODocument;
 public abstract class AbstractDocumentDAO<T extends OEntity> implements CrudDAO<T> {
 
     @Override
-    public String create(T newInstance) {
+    public T create(T newInstance) {
         ODocument document = createDocument(newInstance);
         document = document.save();
-        return document.getIdentity().toString();
+        newInstance.setRid(document.getIdentity().toString());
+        return newInstance;
     }
 
     @Override
