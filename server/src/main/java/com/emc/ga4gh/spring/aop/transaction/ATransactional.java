@@ -29,7 +29,6 @@ public class ATransactional {
     public Object around(ProceedingJoinPoint point) throws Throwable {
         try {
             db.begin(OTransaction.TXTYPE.OPTIMISTIC);
-            System.out.println("TRANSAAA!");
             return point.proceed();
         } catch (Exception e) {
             db.rollback();
