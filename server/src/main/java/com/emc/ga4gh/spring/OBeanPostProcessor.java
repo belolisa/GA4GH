@@ -30,7 +30,6 @@ public class OBeanPostProcessor implements BeanPostProcessor {
         if (o instanceof OObjectDatabaseTx) {
             OObjectDatabaseTx db = ((OObjectDatabaseTx) o).open(user, password);
             db.getEntityManager().registerEntityClasses("com.emc.ga4gh.DTO");
-            System.out.println("db opened");
             return db;
         }
         System.out.println("bean post processor invoked");

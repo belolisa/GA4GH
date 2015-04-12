@@ -23,6 +23,6 @@ public class ReadDAOTest {
         Read read = new Read();
         read.setPath("/path");
         System.out.println("db = " + db);
-//        System.out.println("rd.create(new Read()) = " + rd.create(read));
+        System.out.println("rd.create(new Read()) = " + rd.create(read));
     }
 }

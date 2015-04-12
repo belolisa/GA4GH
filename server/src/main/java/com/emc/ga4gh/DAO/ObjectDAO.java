@@ -2,6 +2,8 @@ package com.emc.ga4gh.DAO;
 
 import com.emc.ga4gh.DTO.OEntity;
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

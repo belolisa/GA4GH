@@ -1,39 +1,24 @@
 package com.emc.ga4gh.DAO;
 
 import com.emc.ga4gh.DTO.OEntity;
-import com.orientechnologies.orient.core.record.impl.ODocument;
 
 /**
- * Created by Elizaveta Belokopytova.
+ * Created by liza on 12.04.15.
  */
-public abstract class DocumentDAO<T extends OEntity> implements CrudDAO<T, String> {
+public interface DocumentDAO<T extends OEntity> extends CrudDAO<T, String> {
+    @Override
+    @OTransacrional
+    String create(T newInstance);
 
     @Override
     @OTransacrional
-    public String create(T newInstance) {
-        ODocument document = createDocument(newInstance);
-        document = document.save();
-        return document.getIdentity().toString();
-    }
+    T read(String id);
 
     @Override
     @OTransacrional
-    public T read(String id) {
-
-        return null;
-    }
+    void update(T transientObject);
 
     @Override
     @OTransacrional
-    public void update(T transientObject) {
-
-    }
-
-    @Override
-    @OTransacrional
-    public void delete(T persistentObject) {
-
-    }
-
-    protected abstract ODocument createDocument(T newInstance);
+    void delete(T persistentObject);
 }

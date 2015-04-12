@@ -1,20 +1,11 @@
 package com.emc.ga4gh.DAO;
 
 import com.emc.ga4gh.DTO.Read;
-import com.orientechnologies.orient.core.record.impl.ODocument;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by Elizaveta Belokopytova.
+ * Created by liza on 12.04.15.
  */
 
-@Repository
-public class ReadDAO extends DocumentDAO<Read> {
-
-    @Override
-    protected ODocument createDocument(Read newRead) {
-        ODocument document = new ODocument();
-        document.field("path", newRead.getPath());
-        return document;
-    }
+public interface ReadDAO extends DocumentDAO<Read> {
 }
