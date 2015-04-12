@@ -10,5 +10,5 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Inherited
 @Documented
-public @interface Loggable {
+public @interface Log {
 }

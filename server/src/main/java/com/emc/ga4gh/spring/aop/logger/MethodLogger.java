@@ -21,7 +21,7 @@ public class MethodLogger {
 
     static Logger logger = LoggerFactory.getLogger(MethodLogger.class);
 
-    @Pointcut("execution(@Loggable * *.*(..))")
+    @Pointcut("execution(@com.emc.ga4gh.spring.aop.logger.Log * *.*(..))")
     public void LogPointcut(){}
 
     @Around("LogPointcut()")

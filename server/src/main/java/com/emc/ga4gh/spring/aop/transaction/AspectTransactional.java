@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
@@ -35,11 +36,12 @@ public class AspectTransactional {
     public Object around(ProceedingJoinPoint point) throws Throwable {
         try {
             db.begin(OTransaction.TXTYPE.OPTIMISTIC);
+            Method method = MethodSignature.class.cast(point.getSignature()).getMethod();
             logger.info(
                     String.format(
                             "%s#%s(%s): is transactional",
-                            MethodSignature.class.cast(point.getSignature()).getMethod().getDeclaringClass(),
-                            MethodSignature.class.cast(point.getSignature()).getMethod().getName(),
+                            method.getDeclaringClass(),
+                            method.getName(),
                             Arrays.asList(point.getArgs())
                     )
             );
