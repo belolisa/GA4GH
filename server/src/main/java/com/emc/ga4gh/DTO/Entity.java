@@ -3,15 +3,14 @@ package com.emc.ga4gh.DTO;
 /**
  * Created by Elizaveta Belokopytova.
  */
-// O stands for Orient
 
-public interface OEntity {
+public interface Entity {
 
     String getPath();
 
     void setPath(String path);
 
-    public String getRid();
+    String getRid();
 
-    public void setRid(String id);
+    void setRid(String id);
 }

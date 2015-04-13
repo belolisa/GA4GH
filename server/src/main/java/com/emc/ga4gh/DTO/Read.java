@@ -6,7 +6,7 @@ import javax.persistence.Version;
 /**
  * Created by Elizaveta Belokopytova.
  */
-public class Read implements OEntity {
+public class Read implements Entity {
 
     @Version
     private Integer version;

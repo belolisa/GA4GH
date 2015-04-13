@@ -2,7 +2,7 @@ package com.emc.ga4gh.DAO.document;
 
 import com.emc.ga4gh.DAO.CrudDAO;
 import com.emc.ga4gh.DAO.OTransacrional;
-import com.emc.ga4gh.DTO.OEntity;
+import com.emc.ga4gh.DTO.Entity;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
 /**
@@ -10,7 +10,7 @@ import com.orientechnologies.orient.core.record.impl.ODocument;
  */
 
 @OTransacrional
-public abstract class AbstractDocumentDAO<T extends OEntity> implements CrudDAO<T> {
+public abstract class AbstractDocumentDAO<T extends Entity> implements CrudDAO<T> {
 
     @Override
     public T create(T newInstance) {

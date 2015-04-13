@@ -1,12 +1,12 @@
 package com.emc.ga4gh.DAO;
 
-import com.emc.ga4gh.DTO.OEntity;
+import com.emc.ga4gh.DTO.Entity;
 
 /**
  * Created by Elizaveta Belokopytova.
  */
 
-public interface CrudDAO<T extends OEntity> {
+public interface CrudDAO<T extends Entity> {
 
     T create(T newInstance);
 

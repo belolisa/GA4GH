@@ -2,7 +2,7 @@ package com.emc.ga4gh.DAO.object;
 
 import com.emc.ga4gh.DAO.CrudDAO;
 import com.emc.ga4gh.DAO.OTransacrional;
-import com.emc.ga4gh.DTO.OEntity;
+import com.emc.ga4gh.DTO.Entity;
 import com.emc.ga4gh.spring.aop.logger.Log;
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 
 @OTransacrional
-public abstract class AbstractObjectDAO<T extends OEntity> implements CrudDAO<T> {
+public abstract class AbstractObjectDAO<T extends Entity> implements CrudDAO<T> {
 
     @Autowired
     protected OObjectDatabaseTx db;
