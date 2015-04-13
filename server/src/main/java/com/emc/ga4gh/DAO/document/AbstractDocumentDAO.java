@@ -5,6 +5,8 @@ import com.emc.ga4gh.DAO.OTransacrional;
 import com.emc.ga4gh.DTO.Entity;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
+import java.util.Optional;
+
 /**
  * Created by Elizaveta Belokopytova.
  */
@@ -21,7 +23,7 @@ public abstract class AbstractDocumentDAO<T extends Entity> implements CrudDAO<T
     }
 
     @Override
-    public T read(String id) {
+    public Optional<T> read(String id) {
 
         return null;
     }

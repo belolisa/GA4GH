@@ -8,7 +8,11 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by liza on 12.04.15.
  */
-
 @Repository
 public class ReadDAOObjectImpl extends AbstractObjectDAO<Read> implements ReadDAO {
+
+    @Override
+    protected String getEntityName() {
+        return "Read";
+    }
 }

@@ -6,6 +6,8 @@ import com.emc.ga4gh.DTO.Read;
 import com.emc.ga4gh.spring.aop.logger.Log;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
+import java.util.Optional;
+
 /**
  * Created by Elizaveta Belokopytova.
  */
@@ -27,7 +29,7 @@ public class ReadDAOImpl extends AbstractDocumentDAO<Read> implements ReadDAO {
 
     @Log
     @Override
-    public Read read(String id) {
+    public Optional<Read> read(String id) {
         return super.read(id);
     }
 
