@@ -12,8 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Optional;
-
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -44,14 +42,14 @@ public class ReadDAOTest {
     }
 
     @Test
-    public void testCreateCorrectPath() throws Exception {
+    public void testCreate_CorrectPath() throws Exception {
         read = rd.create(read);
         assertEquals(read.getPath(), defaultPath);
     }
 
     @Test
     public void testRead() throws Exception {
-        read = rd.create(read);
+        read = rd.create(read);  // TODO: native call
         assertTrue(rd.read(read.getRid()).isPresent());
     }
 
@@ -63,8 +61,8 @@ public class ReadDAOTest {
         read.setPath(customPath);
         rd.update(read);
 
-        Optional<Read> readOptional = rd.read(read.getRid());
-        assertEquals(readOptional.get().getPath(), customPath);
+        Read readRead = rd.read(read.getRid()).get();
+        assertEquals(readRead.getPath(), customPath);
     }
 
     @Test

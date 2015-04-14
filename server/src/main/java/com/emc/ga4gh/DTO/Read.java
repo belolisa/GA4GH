@@ -15,6 +15,10 @@ public class Read implements Entity {
     private String rid;
 
     private String path;
+    private String readGroupId;
+    private int alignmentStart;
+    private int alignmentEnd;
+    private String alignmentSequence;
 
     @Override
     public String getPath() {
@@ -51,4 +55,37 @@ public class Read implements Entity {
     public void setVersion(int version) {
         this.version = version;
     }
+
+    public void setReadGroupId(String readGroupId) {
+        this.readGroupId = readGroupId;
+    }
+
+    public String getReadGroupId() {
+        return readGroupId;
+    }
+
+    public void setAlignmentStart(int alignmentStart) {
+        this.alignmentStart = alignmentStart;
+    }
+
+    public int getAlignmentStart() {
+        return alignmentStart;
+    }
+
+    public void setAlignmentEnd(int alignmentEnd) {
+        this.alignmentEnd = alignmentEnd;
+    }
+
+    public int getAlignmentEnd() {
+        return alignmentEnd;
+    }
+
+    public void setAlignmentSequence(String alignmentSequence) {
+        this.alignmentSequence = alignmentSequence;
+    }
+
+    public String getAlignmentSequence() {
+        return alignmentSequence;
+    }
+
 }

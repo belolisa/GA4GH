@@ -51,6 +51,8 @@ crashlytics-build.properties
 *.ear
 *.class
 
+/bam/
+
 # eclipse specific git ignore
 *.pydevproject
 .project
