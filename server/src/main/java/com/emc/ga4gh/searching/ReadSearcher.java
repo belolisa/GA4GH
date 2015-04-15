@@ -70,9 +70,9 @@ public class ReadSearcher implements Searcher<GASearchReadsResponse, GASearchRea
         List<Read> result = db.query(
                 new OSQLSynchQuery<Read>(
                         "select * from Read where " +
-                                (readGroupIds.isEmpty() ? "" + "readGroupId IN " + readGroupIds.stream().collect(Collectors.joining(",", "(", ")")) +
+                                (readGroupIds.isEmpty() ? "" + "readGroupId IN " + readGroupIds.stream().collect(Collectors.joining(",", "(", ")"))) +
                                 ref != null ? " AND alignmentSequence = " + ref: "" +
-                                " order by alignmentStart")));
+                                " order by alignmentStart"));
 
 
         Long start = request.getStart();
@@ -113,7 +113,7 @@ public class ReadSearcher implements Searcher<GASearchReadsResponse, GASearchRea
             }
 
         } else {
-            String ref = null;
+            ref = null;
             if (referenceName == null) {
                 ref = referenceId;
             } else {
@@ -133,7 +133,7 @@ public class ReadSearcher implements Searcher<GASearchReadsResponse, GASearchRea
             while (it.hasNext()) {
                 ++offset;
                 SAMRecord samRecord = it.next();
-                if (readGroupIds.length != 0) {
+                if (readGroupIds.size() != 0) {
                     if (readGroupIds.contains(
                             samRecord.getReadGroup().getId())) {
                         ++added;

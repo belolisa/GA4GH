@@ -7,13 +7,13 @@ import org.junit.Test;
 import java.io.File;
 import java.util.List;
 
-public class FileReadsParserTest {
+public class ReadsFileParserTest {
 
-    private FileReadsParser fileReadsSearcher;
+    private ReadsFileParser fileReadsSearcher;
 
     @Before
     public void setUp() throws Exception {
-        fileReadsSearcher = new FileReadsParser(new File("file:example.bam"));
+        fileReadsSearcher = new ReadsFileParser(new File("file:example.bam"));
     }
 
     @Test

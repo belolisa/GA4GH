@@ -15,9 +15,13 @@ public class Read implements Entity {
     private String rid;
 
     private String path;
+
     private String readGroupId;
+
     private int alignmentStart;
+
     private int alignmentEnd;
+
     private String alignmentSequence;
 
     @Override
@@ -43,8 +47,13 @@ public class Read implements Entity {
     @Override
     public String toString() {
         return "Read{" +
-                "rid='" + rid + '\'' +
+                "version=" + version +
+                ", rid='" + rid + '\'' +
                 ", path='" + path + '\'' +
+                ", readGroupId='" + readGroupId + '\'' +
+                ", alignmentStart=" + alignmentStart +
+                ", alignmentEnd=" + alignmentEnd +
+                ", alignmentSequence='" + alignmentSequence + '\'' +
                 '}';
     }
 

@@ -1,7 +1,7 @@
-package com.emc.ga4gh.DAO.object.read;
+package com.emc.ga4gh.DAO.orient.object.read;
 
 import com.emc.ga4gh.DAO.ReadDAO;
-import com.emc.ga4gh.DAO.object.AbstractObjectDAO;
+import com.emc.ga4gh.DAO.orient.object.AbstractObjectDAO;
 import com.emc.ga4gh.DTO.Read;
 import org.springframework.stereotype.Repository;
 

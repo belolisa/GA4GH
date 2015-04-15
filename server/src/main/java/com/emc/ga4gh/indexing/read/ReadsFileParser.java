@@ -15,10 +15,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class FileReadsParser implements Parser<Read> {
+public class ReadsFileParser implements Parser<Read> {
 	private File inputFile;
 
-	public FileReadsParser(File file) {
+	public ReadsFileParser(File file) {
 		this.inputFile = file;
 	}
 

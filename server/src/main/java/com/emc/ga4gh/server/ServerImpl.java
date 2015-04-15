@@ -1,10 +1,13 @@
 package com.emc.ga4gh.server;
 
 import com.emc.ga4gh.model.*;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Elizaveta Belokopytova.
  */
+
+@Component
 public class ServerImpl implements Server {
     @Override
     public GAReference getReference(String id) {

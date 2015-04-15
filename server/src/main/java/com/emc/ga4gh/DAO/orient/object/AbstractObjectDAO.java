@@ -1,4 +1,4 @@
-package com.emc.ga4gh.DAO.object;
+package com.emc.ga4gh.DAO.orient.object;
 
 import com.emc.ga4gh.DAO.CrudDAO;
 import com.emc.ga4gh.DAO.OTransacrional;

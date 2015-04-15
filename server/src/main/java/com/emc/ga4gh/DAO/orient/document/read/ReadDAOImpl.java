@@ -1,7 +1,7 @@
-package com.emc.ga4gh.DAO.document.read;
+package com.emc.ga4gh.DAO.orient.document.read;
 
 import com.emc.ga4gh.DAO.ReadDAO;
-import com.emc.ga4gh.DAO.document.AbstractDocumentDAO;
+import com.emc.ga4gh.DAO.orient.document.AbstractDocumentDAO;
 import com.emc.ga4gh.DTO.Read;
 import com.emc.ga4gh.spring.aop.logger.Log;
 import com.orientechnologies.orient.core.record.impl.ODocument;
