@@ -21,8 +21,8 @@ public class OrientVariantIndexer implements Indexer {
 
     @Override
     public void index(File file) {
-        List<Variant> readList = new VariantFileParser(file).parse();
-        for (Variant reference : readList) {
+        List<Variant> variantList = new VariantFileParser(file).parse();
+        for (Variant reference : variantList) {
             vd.create(reference);
         }
     }

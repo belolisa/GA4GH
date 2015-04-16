@@ -2,13 +2,14 @@ package com.emc.ga4gh.DAO;
 
 import com.emc.ga4gh.DTO.Entity;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
  * Created by Elizaveta Belokopytova.
  */
 
-public interface CrudDAO<T extends Entity> {
+public interface CrudSelectDAO<T extends Entity> {
 
     T create(T newInstance);
 
@@ -17,5 +18,9 @@ public interface CrudDAO<T extends Entity> {
     void update(T transientObject);
 
     void delete(T persistentObject);
+
+    SelectBuilder getSelectBuilder();
+
+    List<T> querySelect(SelectBuilder builder);
 
 }

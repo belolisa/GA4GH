@@ -21,8 +21,8 @@ public class OrientReferenceIndexer implements Indexer {
 
     @Override
     public void index(File file) {
-        List<Reference> readList = new ReferenceFileParser(file).parse();
-        for (Reference reference : readList) {
+        List<Reference> referenceList = new ReferenceFileParser(file).parse();
+        for (Reference reference : referenceList) {
             rd.create(reference);
         }
     }

@@ -1,4 +1,4 @@
-package com.emc.ga4gh.DAO.orient.object.read;
+package com.emc.ga4gh.DAO.orient.object;
 
 import com.emc.ga4gh.DAO.ReferenceDAO;
 import com.emc.ga4gh.DAO.orient.object.AbstractObjectDAO;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * Created by liza on 12.04.15.
  */
 @Repository
-public class ReferenceDAOObjectImpl extends AbstractObjectDAO<Reference> implements ReferenceDAO {
+public class ReferenceDAOObject extends AbstractObjectDAO<Reference> implements ReferenceDAO {
 
     @Override
     protected String getEntityName() {

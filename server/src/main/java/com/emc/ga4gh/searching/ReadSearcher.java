@@ -71,7 +71,7 @@ public class ReadSearcher implements Searcher<GASearchReadsResponse, GASearchRea
                 new OSQLSynchQuery<Read>(
                         "select * from Read where " +
                                 (readGroupIds.isEmpty() ? "" + "readGroupId IN " + readGroupIds.stream().collect(Collectors.joining(",", "(", ")"))) +
-                                ref != null ? " AND alignmentSequence = " + ref: "" +
+                                ref != null ? " AND alignmentSequence = " + ref "" +
                                 " order by alignmentStart"));
 
 
