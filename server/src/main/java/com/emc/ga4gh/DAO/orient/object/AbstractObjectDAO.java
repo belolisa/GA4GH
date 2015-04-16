@@ -40,8 +40,6 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
                 .setObjectParameter("@rid", rid)
                 .setQueryParameter("limit", "1");
 
-//        List<?> result = db.query(new OSQLSynchQuery<T>("select from " + getEntityName() + " where @rid = " + rid + " limit 1"));
-
         List<T> result = querySelect(selectBuilder);
         if (result.size() > 0) {
             return Optional.ofNullable((T) result.get(0));
