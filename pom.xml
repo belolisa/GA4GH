@@ -9,6 +9,7 @@
         <module>model</module>
         <module>server</module>
         <module>api</module>
+        <module>cli</module>
     </modules>
     <packaging>pom</packaging>
 

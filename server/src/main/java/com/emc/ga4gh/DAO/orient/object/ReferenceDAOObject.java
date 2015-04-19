@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public class ReferenceDAOObject extends AbstractObjectDAO<Reference> implements ReferenceDAO {
 
     @Override
-    protected String getEntityName() {
+    protected String getCollectionName() {
         return "Reference";
     }
 }
