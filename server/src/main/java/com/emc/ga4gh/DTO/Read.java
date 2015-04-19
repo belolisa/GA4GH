@@ -22,7 +22,10 @@ public class Read implements Entity {
 
     private Integer alignmentEnd;
 
-    private String alignmentSequence;
+    private int numberInFile;
+
+    private String referenceName;
+    private Integer referenceId;
 
     @Override
     public String getPath() {
@@ -53,7 +56,6 @@ public class Read implements Entity {
                 ", readGroupId='" + readGroupId + '\'' +
                 ", alignmentStart=" + alignmentStart +
                 ", alignmentEnd=" + alignmentEnd +
-                ", alignmentSequence='" + alignmentSequence + '\'' +
                 '}';
     }
 
@@ -89,12 +91,27 @@ public class Read implements Entity {
         return alignmentEnd;
     }
 
-    public void setAlignmentSequence(String alignmentSequence) {
-        this.alignmentSequence = alignmentSequence;
+    public void setNumberInFile(int numberInFile) {
+        this.numberInFile = numberInFile;
     }
 
-    public String getAlignmentSequence() {
-        return alignmentSequence;
+    public int getNumberInFile() {
+        return numberInFile;
     }
 
+    public void setReferenceName(String referenceName) {
+        this.referenceName = referenceName;
+    }
+
+    public String getReferenceName() {
+        return referenceName;
+    }
+
+    public void setReferenceId(Integer referenceId) {
+        this.referenceId = referenceId;
+    }
+
+    public Integer getReferenceId() {
+        return referenceId;
+    }
 }

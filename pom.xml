@@ -8,8 +8,8 @@
     <modules>
         <module>model</module>
         <module>server</module>
-        <module>api</module>
         <module>cli</module>
+        <module>api</module>
     </modules>
     <packaging>pom</packaging>
 

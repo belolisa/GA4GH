@@ -3,7 +3,6 @@ package com.emc.ga4gh.DAO.builder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Created by liza on 16.04.15.
@@ -32,13 +31,12 @@ public abstract class AbstractSQLBuilder implements SQLBuilder {
     }
 
     @Override
-    public AbstractSQLBuilder setObjectParameterInList(String name, List<Object> values) {
+    public AbstractSQLBuilder setObjectParameterInList(String name, List<String> values) {
         if (!values.isEmpty()) {
             getObjectParameters().put(name, new ParamStatement(name,
                     "in",
                     "(" + values
                             .stream()
-                            .map(Object::toString)
                             .reduce((a, b) -> a + ", " + b)
                             .get() + ")"));
         }

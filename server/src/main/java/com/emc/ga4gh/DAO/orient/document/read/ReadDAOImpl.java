@@ -1,12 +1,13 @@
 package com.emc.ga4gh.DAO.orient.document.read;
 
 import com.emc.ga4gh.DAO.ReadDAO;
-import com.emc.ga4gh.DAO.builder.SelectBuilder;
 import com.emc.ga4gh.DAO.orient.document.AbstractDocumentDAO;
 import com.emc.ga4gh.DTO.Read;
 import com.emc.ga4gh.spring.aop.logger.Log;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -46,4 +47,9 @@ public class ReadDAOImpl extends AbstractDocumentDAO<Read> implements ReadDAO {
         super.delete(persistentObject);
     }
 
+
+    @Override
+    public List<Read> findIncOrdered(String referenceId, String referenceName, Long start, Long end, List<String> readGroupIds) {
+            return new ArrayList<>();
+        }
 }

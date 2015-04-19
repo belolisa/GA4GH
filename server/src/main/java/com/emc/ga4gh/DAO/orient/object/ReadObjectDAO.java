@@ -3,9 +3,9 @@ package com.emc.ga4gh.DAO.orient.object;
 import com.emc.ga4gh.DAO.ReadDAO;
 import com.emc.ga4gh.DAO.builder.SelectBuilder;
 import com.emc.ga4gh.DTO.Read;
-import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,5 +18,26 @@ public class ReadObjectDAO extends AbstractObjectDAO<Read> implements ReadDAO {
     @Override
     protected String getCollectionName() {
         return "Read";
+    }
+
+
+    @Override
+    public List<Read> findIncOrdered(String referenceId, String referenceName, Long start, Long end, List<String> readGroupIds) {
+        SelectBuilder builder = (SelectBuilder) new SelectBuilder("Read")
+                .setObjectParameterInList("readGroupId", Arrays.asList(readGroupIds));
+        builder.setObjectParameter("alignmentStart", ">=", String.valueOf(start));
+        if (end != null) {
+            builder.setObjectParameter("alignmentEnd", "<=", String.valueOf(end))
+                    .setObjectParameter("alignmentEnd", ">=", String.valueOf(start))
+                    .setObjectParameter("alignmentStart", "<=", String.valueOf(end));
+        }
+        if (referenceId != null) {
+            builder.setObjectParameterEquals("referenceId", referenceId);
+        }
+        if (referenceName != null) {
+            builder.setObjectParameterEquals("referenceName", referenceName);
+        }
+
+        return querySelect(builder);
     }
 }

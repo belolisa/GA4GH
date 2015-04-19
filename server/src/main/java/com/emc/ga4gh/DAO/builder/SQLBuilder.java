@@ -11,7 +11,7 @@ public interface SQLBuilder {
 
     SQLBuilder setQueryParameter(String name, String value);
 
-    SQLBuilder setObjectParameterInList(String name, List<Object> values);
+    SQLBuilder setObjectParameterInList(String name, List<String> values);
 
     AbstractSQLBuilder setObjectParameterEquals(String name, String value);
 

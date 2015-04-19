@@ -31,7 +31,6 @@ public class ReadDAOTest {
     @Before
     public void setUp() throws Exception {
         read = new Read();
-        read.setAlignmentSequence("ABCDE");
         read.setAlignmentStart(0);
         read.setAlignmentEnd(10);
         defaultPath = "/path";
