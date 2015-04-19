@@ -1,11 +1,11 @@
 package com.emc.ga4gh.searching.searchReadGroupSets;
 
-import com.emc.sk.ga4ghapi.fileStorage.IdGenerator;
-import com.emc.sk.ga4ghapi.model.*;
+import com.emc.ga4gh.model.*;
 import htsjdk.samtools.SAMProgramRecord;
 import htsjdk.samtools.SAMReadGroupRecord;
 import htsjdk.samtools.SamReader;
 import htsjdk.samtools.SamReaderFactory;
+import org.springframework.util.IdGenerator;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,6 +28,7 @@ public class FileReadGroupSetsSearcher {
 	
 	public GAReadGroupSet searchReadGroupSets(GASearchReadGroupSetsRequest request) {
 		if (readGroupSetId == "") {
+//			TODO: fix this
 			readGroupSetId = IdGenerator.generateId();
 		}
 		String readGroupSetDataSetId = null;

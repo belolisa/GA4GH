@@ -1,11 +1,11 @@
 package com.emc.ga4gh.searching.searchReadGroupSets;
 
-import com.emc.sk.ga4ghapi.fileStorage.FileRecursiveSearcher;
-import com.emc.sk.ga4ghapi.fileStorage.registry.sam.SAMRegistry;
-import com.emc.sk.ga4ghapi.fileStorage.registry.sam.SAMRegistryEntity;
-import com.emc.sk.ga4ghapi.model.GAReadGroupSet;
-import com.emc.sk.ga4ghapi.model.GASearchReadGroupSetsRequest;
-import com.emc.sk.ga4ghapi.model.GASearchReadGroupSetsResponse;
+
+import com.emc.ga4gh.model.GAReadGroupSet;
+import com.emc.ga4gh.model.GASearchReadGroupSetsRequest;
+import com.emc.ga4gh.model.GASearchReadGroupSetsResponse;
+import com.emc.ga4gh.searching.registry.sam.SAMRegistry;
+import com.emc.ga4gh.searching.registry.sam.SAMRegistryEntity;
 import com.google.gson.Gson;
 import org.springframework.cglib.core.Predicate;
 
@@ -50,6 +50,7 @@ public class FileStorageReadGroupSetsSearcher {
 	public GASearchReadGroupSetsResponse searchReadGroupSets(
 			GASearchReadGroupSetsRequest request) {
 		if (paths == null) {
+			//TODO: rewrite
 			paths = FileRecursiveSearcher.findFilesRecursively(new File(path),
 					new Predicate() {
 						@Override

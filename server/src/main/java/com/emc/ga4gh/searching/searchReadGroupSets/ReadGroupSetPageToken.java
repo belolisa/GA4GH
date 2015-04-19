@@ -1,8 +1,9 @@
 package com.emc.ga4gh.searching.searchReadGroupSets;
 
-import com.emc.sk.ga4ghapi.model.GASearchReadGroupSetsRequest;
 
-public class ReadGroupSetPageToken extends GASearchReadGroupSetsRequest{
+import com.emc.ga4gh.model.GASearchReadGroupSetsRequest;
+
+public class ReadGroupSetPageToken extends GASearchReadGroupSetsRequest {
 	private long offset;
 	
 	public ReadGroupSetPageToken(String[] dataSetIds, String name,

@@ -1,9 +1,10 @@
 package com.emc.ga4gh.searching.getReferenceBases;
 
-import com.emc.sk.ga4ghapi.fileStorage.registry.reference.ReferenceRegistry;
-import com.emc.sk.ga4ghapi.model.GAListReferenceBasesRequest;
-import com.emc.sk.ga4ghapi.model.GAListReferenceBasesResponse;
-import com.emc.sk.ga4ghapi.model.GAReference;
+
+import com.emc.ga4gh.model.GAListReferenceBasesRequest;
+import com.emc.ga4gh.model.GAListReferenceBasesResponse;
+import com.emc.ga4gh.model.GAReference;
+import com.emc.ga4gh.searching.registry.reference.ReferenceRegistry;
 
 import java.io.File;
 

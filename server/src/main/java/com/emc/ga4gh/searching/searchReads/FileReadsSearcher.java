@@ -1,6 +1,6 @@
 package com.emc.ga4gh.searching.searchReads;
 
-import com.emc.sk.ga4ghapi.model.*;
+import com.emc.ga4gh.model.*;
 import com.google.gson.Gson;
 import htsjdk.samtools.SAMException;
 import htsjdk.samtools.SAMRecord;

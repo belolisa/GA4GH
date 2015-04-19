@@ -1,7 +1,7 @@
 package com.emc.ga4gh.DAO.orient.document.read;
 
 import com.emc.ga4gh.DAO.ReadDAO;
-import com.emc.ga4gh.DAO.SelectBuilder;
+import com.emc.ga4gh.DAO.builder.SelectBuilder;
 import com.emc.ga4gh.DAO.orient.document.AbstractDocumentDAO;
 import com.emc.ga4gh.DTO.Read;
 import com.emc.ga4gh.spring.aop.logger.Log;

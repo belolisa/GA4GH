@@ -1,14 +1,13 @@
 package com.emc.ga4gh.searching.searchCallSets;
 
-import com.emc.sk.ga4ghapi.fileStorage.FileRecursiveSearcher;
-import com.emc.sk.ga4ghapi.fileStorage.IdGenerator;
-import com.emc.sk.ga4ghapi.fileStorage.registry.vcf.VCFRegistry;
-import com.emc.sk.ga4ghapi.fileStorage.registry.vcf.VCFRegistryEntity;
-import com.emc.sk.ga4ghapi.model.GACallSet;
-import com.emc.sk.ga4ghapi.model.GASearchCallSetsRequest;
-import com.emc.sk.ga4ghapi.model.GASearchCallSetsResponse;
+import com.emc.ga4gh.model.GACallSet;
+import com.emc.ga4gh.model.GASearchCallSetsRequest;
+import com.emc.ga4gh.model.GASearchCallSetsResponse;
+import com.emc.ga4gh.searching.registry.vcf.VCFRegistry;
+import com.emc.ga4gh.searching.registry.vcf.VCFRegistryEntity;
 import com.google.gson.Gson;
 import org.springframework.cglib.core.Predicate;
+import org.springframework.util.IdGenerator;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -104,6 +103,7 @@ public class FileStorageCallSetsSearcher {
 				List<GACallSet> fileResult = searcher
 						.searchCallSets(request);
 				if (entity == null) {
+					//TODO fix this
 					vcfRegistry.putToRegistry(new VCFRegistryEntity(variantSetId, filePath, new ArrayList<String>(Arrays.asList(searcher.getCallSetIds()))));
 				}
 				if (fileResult != null) {

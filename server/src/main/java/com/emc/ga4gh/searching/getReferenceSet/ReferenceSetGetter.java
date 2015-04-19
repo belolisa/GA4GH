@@ -1,11 +1,9 @@
 package com.emc.ga4gh.searching.getReferenceSet;
 
-import com.emc.sk.ga4ghapi.fileStorage.registry.reference.ReferenceSetRegistry;
-import com.emc.sk.ga4ghapi.model.GAReferenceSet;
 
-/**
- * Created by timofb on 4/7/2015.
- */
+import com.emc.ga4gh.model.GAReferenceSet;
+import com.emc.ga4gh.searching.registry.reference.ReferenceSetRegistry;
+
 public class ReferenceSetGetter {
     private ReferenceSetRegistry registry;
 

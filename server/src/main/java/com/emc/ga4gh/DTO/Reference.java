@@ -26,5 +26,6 @@ public class Reference implements Entity {
 
     @Override
     public void setRid(String rid) {
+        this.rid = rid;
     }
 }

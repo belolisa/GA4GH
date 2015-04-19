@@ -1,5 +1,6 @@
 package com.emc.ga4gh.DAO;
 
+import com.emc.ga4gh.DAO.builder.SelectBuilder;
 import com.emc.ga4gh.DTO.Entity;
 
 import java.util.List;
@@ -22,5 +23,7 @@ public interface CrudSelectDAO<T extends Entity> {
     SelectBuilder getSelectBuilder();
 
     List<T> querySelect(SelectBuilder builder);
+
+   /* List<T> querySelect(String what, SelectBuilder builder);*/
 
 }

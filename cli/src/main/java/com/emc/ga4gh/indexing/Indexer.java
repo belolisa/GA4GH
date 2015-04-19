@@ -9,4 +9,6 @@ public interface Indexer {
 
     void index(File file);
 
+    void index(String path);
+
 }

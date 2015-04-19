@@ -1,7 +1,8 @@
 package com.emc.ga4gh.searching.searchReads;
 
-import com.emc.sk.ga4ghapi.model.GASearchReadsRequest;
-import com.emc.sk.ga4ghapi.model.GASearchReadsResponse;
+
+import com.emc.ga4gh.model.GASearchReadsRequest;
+import com.emc.ga4gh.model.GASearchReadsResponse;
 
 import java.io.File;
 

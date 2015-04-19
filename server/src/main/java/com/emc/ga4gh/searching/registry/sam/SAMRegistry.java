@@ -1,7 +1,7 @@
 package com.emc.ga4gh.searching.registry.sam;
 
-import com.emc.sk.ga4ghapi.fileStorage.registry.Registry;
-import com.emc.sk.ga4ghapi.fileStorage.registry.RegistryIterator;
+import com.emc.ga4gh.searching.registry.Registry;
+import com.emc.ga4gh.searching.registry.RegistryIterator;
 import com.google.gson.Gson;
 
 import java.io.IOException;

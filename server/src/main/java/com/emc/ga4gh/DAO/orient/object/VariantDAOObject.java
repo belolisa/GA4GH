@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public class VariantDAOObject extends AbstractObjectDAO<Variant> implements VariantDAO {
 
     @Override
-    protected String getEntityName() {
+    protected String getCollectionName() {
         return "Variant";
     }
 }

@@ -1,11 +1,9 @@
 package com.emc.ga4gh.DAO.orient.object;
 
-import com.emc.ga4gh.DAO.AbstractSQLBuilder;
 import com.emc.ga4gh.DAO.OTransacrional;
 import com.emc.ga4gh.DAO.CrudSelectDAO;
-import com.emc.ga4gh.DAO.SelectBuilder;
+import com.emc.ga4gh.DAO.builder.SelectBuilder;
 import com.emc.ga4gh.DTO.Entity;
-import com.emc.ga4gh.DTO.Read;
 import com.emc.ga4gh.spring.aop.logger.Log;
 import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
@@ -13,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * Created by Elizaveta Belokopytova.
@@ -60,7 +57,7 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
 
     @Override
     public SelectBuilder getSelectBuilder() {
-        return new SelectBuilder(getEntityName());
+        return new SelectBuilder(getCollectionName());
     }
 
     @Override
@@ -68,5 +65,9 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
         return db.query(new OSQLSynchQuery<T>(builder.build()));
     }
 
-    protected abstract String getEntityName();
+/*
+    //TODo choose mechanism iof work
+    public abstract List<T> querySelect(String what, SelectBuilder builder);*/
+
+    protected abstract String getCollectionName();
 }

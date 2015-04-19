@@ -1,12 +1,11 @@
 package com.emc.ga4gh.searching.getReferenceBases;
 
-import com.emc.sk.ga4ghapi.model.GAListReferenceBasesRequest;
-import com.emc.sk.ga4ghapi.model.GAListReferenceBasesResponse;
+import com.emc.ga4gh.model.GAListReferenceBasesRequest;
+import com.emc.ga4gh.model.GAListReferenceBasesResponse;
 import com.google.gson.Gson;
 import net.sf.jfasta.FASTAElement;
 import net.sf.jfasta.FASTAFileReader;
 import net.sf.jfasta.impl.FASTAElementIterator;
-import net.sf.jfasta.impl.FASTAFileReaderImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,6 +43,7 @@ public class FileReferenceBasesGetter {
                 return getReferenceBases(token.getId(), new GAListReferenceBasesRequest(token.getOffset(), token.getEnd(), null));
             }
         }
+        //TODO: fix this. Add dependence
         FASTAFileReader reader;
         try {
             reader = new FASTAFileReaderImpl(inputFile);

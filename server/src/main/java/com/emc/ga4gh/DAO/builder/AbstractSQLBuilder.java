@@ -1,7 +1,6 @@
-package com.emc.ga4gh.DAO;
+package com.emc.ga4gh.DAO.builder;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

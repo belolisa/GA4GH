@@ -1,7 +1,7 @@
 package com.emc.ga4gh.searching.registry.reference;
 
-import com.emc.sk.ga4ghapi.fileStorage.registry.Registry;
-import com.emc.sk.ga4ghapi.model.GAReferenceSet;
+import com.emc.ga4gh.model.GAReferenceSet;
+import com.emc.ga4gh.searching.registry.Registry;
 import com.google.gson.Gson;
 
 import java.io.IOException;

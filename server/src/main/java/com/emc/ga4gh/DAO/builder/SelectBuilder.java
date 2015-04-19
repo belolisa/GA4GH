@@ -1,6 +1,4 @@
-package com.emc.ga4gh.DAO;
-
-import java.util.List;
+package com.emc.ga4gh.DAO.builder;
 
 /**
  * Created by liza on 16.04.15.

@@ -1,7 +1,7 @@
 package com.emc.ga4gh.searching.registry.reference;
 
-import com.emc.sk.ga4ghapi.fileStorage.registry.Registry;
-import com.emc.sk.ga4ghapi.model.GAReference;
+import com.emc.ga4gh.model.GAReference;
+import com.emc.ga4gh.searching.registry.Registry;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -9,9 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-/**
- * Created by timofb on 4/7/2015.
- */
 public class ReferenceRegistry extends Registry<GAReference> {
 
     private final String FILE_NAME = "referenceRegistry.txt";

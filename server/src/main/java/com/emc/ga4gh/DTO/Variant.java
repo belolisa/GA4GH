@@ -26,5 +26,6 @@ public class Variant implements Entity {
 
     @Override
     public void setRid(String rid) {
+        this.rid = rid;
     }
 }

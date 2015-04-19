@@ -2,7 +2,6 @@ package com.emc.ga4gh.indexing;
 
 import com.emc.ga4gh.DTO.Entity;
 
-import java.io.File;
 import java.util.List;
 
 /**
@@ -10,6 +9,6 @@ import java.util.List;
  */
 public interface Parser<T extends Entity> {
 
-    public abstract List<T> parse();
+    List<T> parse();
 
 }

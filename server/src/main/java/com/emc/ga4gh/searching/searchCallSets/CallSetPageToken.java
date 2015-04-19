@@ -1,6 +1,7 @@
 package com.emc.ga4gh.searching.searchCallSets;
 
-import com.emc.sk.ga4ghapi.model.GASearchCallSetsRequest;
+
+import com.emc.ga4gh.model.GASearchCallSetsRequest;
 
 public class CallSetPageToken extends GASearchCallSetsRequest {
 	private int fileResultOffset;
