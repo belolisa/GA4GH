@@ -9,11 +9,10 @@ import htsjdk.samtools.SamReader;
 import htsjdk.samtools.SamReaderFactory;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class ReadsFileParser implements Parser<Read> {
 	private File inputFile;
@@ -25,16 +24,17 @@ public class ReadsFileParser implements Parser<Read> {
 	@Override
 	public List<Read> parse() {
 		SamReader samReader = SamReaderFactory.make().open(inputFile);
-		return StreamSupport.stream(samReader.spliterator(), true)
-				.map((samRecord) -> {
-					Read read = new Read();
-					read.setReadGroupId(samRecord.getReadGroup().getId());
-					read.setAlignmentStart(samRecord.getAlignmentStart());
-					read.setAlignmentEnd(samRecord.getAlignmentEnd());
-					GAReadAlignment alignment = parseSamRecord(samRecord);
-					read.setAlignmentSequence(alignment.getAlignedSequence());
-					return read;
-				}).collect(Collectors.toList());
+		ArrayList<Read> reads = new ArrayList<>();
+		for (SAMRecord samRecord : samReader) {
+			Read read = new Read();
+			read.setReadGroupId(samRecord.getReadGroup().getId());
+			read.setAlignmentStart(samRecord.getAlignmentStart());
+			read.setAlignmentEnd(samRecord.getAlignmentEnd());
+			GAReadAlignment alignment = parseSamRecord(samRecord);
+			read.setAlignmentSequence(alignment.getAlignedSequence());
+			reads.add(read);
+		}
+		return reads;
 	}
 
 	private GAReadAlignment parseSamRecord(SAMRecord samRecord) {

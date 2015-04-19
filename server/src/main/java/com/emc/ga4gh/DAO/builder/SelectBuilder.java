@@ -5,7 +5,7 @@ package com.emc.ga4gh.DAO.builder;
  */
 public class SelectBuilder extends AbstractSQLBuilder {
 
-    private String what;
+    private String select;
 
     private String from;
 
@@ -13,8 +13,8 @@ public class SelectBuilder extends AbstractSQLBuilder {
         this.from = from;
     }
 
-    public SelectBuilder setWhat(String what) {
-        this.what = what;
+    public SelectBuilder setSelect(String select) {
+        this.select = select;
         return this;
     }
 
@@ -24,14 +24,10 @@ public class SelectBuilder extends AbstractSQLBuilder {
 
     @Override
     public String build() {
-        String query = "select " + what + " from " + from;
-        if (!getObjectParameters().isEmpty()) {
-            query += " where " + buildObjectParamString();
-        }
-        if (!getQueryParameters().containsKey("limit")) {
-            query += " limit " + getQueryParameters().get("limit");
-        }
-        return query;
+        return "select " + (select != null? select + " ": "") +
+                "from " + from +
+                (!getObjectParameters().isEmpty() ? " where " + buildObjectParamString(): "") +
+                (!getQueryParameters().containsKey("limit") ? " limit " + getQueryParameters().get("limit"): "");
     }
 
     @Override
@@ -39,7 +35,7 @@ public class SelectBuilder extends AbstractSQLBuilder {
         return getObjectParameters()
                 .entrySet()
                 .stream()
-                .map((o) ->o.getKey() + "=" + o.getValue())
+                .map((o) -> o.getKey() + o.getValue().getInfix() + o.getValue().getValue())
                 .reduce((first, second) -> first + " AND " + second)
                 .get();
     }

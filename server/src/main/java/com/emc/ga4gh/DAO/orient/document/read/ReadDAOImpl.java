@@ -46,8 +46,4 @@ public class ReadDAOImpl extends AbstractDocumentDAO<Read> implements ReadDAO {
         super.delete(persistentObject);
     }
 
-    @Override
-    public SelectBuilder getSelectBuilder() {
-        return null;
-    }
 }

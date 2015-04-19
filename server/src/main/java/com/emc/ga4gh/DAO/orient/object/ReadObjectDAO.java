@@ -19,9 +19,4 @@ public class ReadObjectDAO extends AbstractObjectDAO<Read> implements ReadDAO {
     protected String getCollectionName() {
         return "Read";
     }
-
-    /*public abstract List<T> querySelect(String what, SelectBuilder builder) {
-        return db.query(new OSQLSynchQuery<T>(builder.build()));
-
-    }*/
 }

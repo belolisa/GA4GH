@@ -30,6 +30,7 @@ public class OrientReferenceIndexer implements Indexer {
             rd.create(reference);
         }
     }
+
     public void index(String path) {
         index(fs.getFile(path));
     }

@@ -19,8 +19,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <target>1.8</target>
-                    <source>1.8</source>
+                    <target>1.7</target>
+                    <source>1.7</source>
                 </configuration>
             </plugin>
         </plugins>
@@ -37,10 +37,14 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>org.seqdoop</groupId>
+            <artifactId>htsjdk</artifactId>
+            <version>1.118</version>
+        </dependency>
+        <dependency>
+            <groupId>org.utgenome.thirdparty</groupId>
+            <artifactId>picard</artifactId>
+            <version>1.86.0</version>
         </dependency>
     </dependencies>
 </project>

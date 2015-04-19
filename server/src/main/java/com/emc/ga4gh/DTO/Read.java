@@ -9,7 +9,7 @@ import javax.persistence.Version;
 public class Read implements Entity {
 
     @Version
-    private Integer version;
+    private Integer version = 0;
 
     @Id
     private String rid;
@@ -18,9 +18,9 @@ public class Read implements Entity {
 
     private String readGroupId;
 
-    private int alignmentStart;
+    private Integer alignmentStart;
 
-    private int alignmentEnd;
+    private Integer alignmentEnd;
 
     private String alignmentSequence;
 
@@ -57,11 +57,11 @@ public class Read implements Entity {
                 '}';
     }
 
-    public int getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(Integer version) {
         this.version = version;
     }
 
@@ -73,19 +73,19 @@ public class Read implements Entity {
         return readGroupId;
     }
 
-    public void setAlignmentStart(int alignmentStart) {
+    public void setAlignmentStart(Integer alignmentStart) {
         this.alignmentStart = alignmentStart;
     }
 
-    public int getAlignmentStart() {
+    public Integer getAlignmentStart() {
         return alignmentStart;
     }
 
-    public void setAlignmentEnd(int alignmentEnd) {
+    public void setAlignmentEnd(Integer alignmentEnd) {
         this.alignmentEnd = alignmentEnd;
     }
 
-    public int getAlignmentEnd() {
+    public Integer getAlignmentEnd() {
         return alignmentEnd;
     }
 

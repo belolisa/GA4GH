@@ -35,7 +35,8 @@ public class AspectTransactional {
     @Around("DAOPointcut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         try {
-            db.begin(OTransaction.TXTYPE.OPTIMISTIC);
+//            db.begin(OTransaction.TXTYPE.OPTIMISTIC);
+            db.begin();
             Method method = MethodSignature.class.cast(point.getSignature()).getMethod();
             logger.info(
                     String.format(

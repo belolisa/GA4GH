@@ -17,9 +17,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <aspectjrt.version>1.6.10</aspectjrt.version>
         <aspectjweaver.version>1.8.5</aspectjweaver.version>
-        <orientdb-core.version>1.5.1</orientdb-core.version>
-        <orient-commons.version>1.5.1</orient-commons.version>
-        <orientdb.version>1.5.1</orientdb.version>
+        <orientdb.version>2.0.6</orientdb.version>
+        <orient-commons.version>2.0-M1</orient-commons.version>
     </properties>
 
     <dependencies>
@@ -31,11 +30,6 @@
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-core</artifactId>
-            <version>${orientdb-core.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.orientechnologies</groupId>
-            <artifactId>orientdb</artifactId>
             <version>${orientdb.version}</version>
         </dependency>
         <dependency>
@@ -44,9 +38,9 @@
             <version>${orient-commons.version}</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>com.orientechnologies</groupId>
+            <artifactId>orientdb-client</artifactId>
+            <version>${orientdb.version}</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -68,26 +62,7 @@
             <artifactId>orientdb-object</artifactId>
             <version>${orientdb.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>net.sf.jfasta</groupId>-->
-            <!--<artifactId>jfasta</artifactId>-->
-            <!--<version>2.1.1</version>-->
-        <!--</dependency>-->
-        <dependency>
-            <groupId>org.seqdoop</groupId>
-            <artifactId>htsjdk</artifactId>
-            <version>1.118</version>
-        </dependency>
-        <dependency>
-            <groupId>org.utgenome.thirdparty</groupId>
-            <artifactId>picard</artifactId>
-            <version>1.86.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.3.1</version>
-        </dependency>
+
     </dependencies>
 
     <repositories>

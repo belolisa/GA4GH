@@ -31,6 +31,9 @@ public class ReadDAOTest {
     @Before
     public void setUp() throws Exception {
         read = new Read();
+        read.setAlignmentSequence("ABCDE");
+        read.setAlignmentStart(0);
+        read.setAlignmentEnd(10);
         defaultPath = "/path";
         read.setPath(defaultPath);
     }
@@ -60,6 +63,8 @@ public class ReadDAOTest {
         String customPath = "/customPath";
         read.setPath(customPath);
         rd.update(read);
+
+        System.out.println("read.getRid() = " + read.getRid());
 
         Read readRead = rd.read(read.getRid()).get();
         assertEquals(readRead.getPath(), customPath);

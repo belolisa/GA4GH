@@ -33,13 +33,12 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
     public Optional<T> read(String rid) {
 
         SelectBuilder selectBuilder = (SelectBuilder) getSelectBuilder()
-                .setWhat("")
-                .setObjectParameter("@rid", rid)
+                .setObjectParameterEquals("@rid", rid)
                 .setQueryParameter("limit", "1");
 
         List<T> result = querySelect(selectBuilder);
         if (result.size() > 0) {
-            return Optional.ofNullable((T) result.get(0));
+            return Optional.ofNullable(result.get(0));
         } else return Optional.empty();
     }
 
@@ -55,11 +54,11 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
         db.delete(persistentObject);
     }
 
-    private SelectBuilder getSelectBuilder() {
-        return new SelectBuilder(getEntityName());
+    protected SelectBuilder getSelectBuilder() {
+        return new SelectBuilder(getCollectionName());
     }
 
-    private List<T> querySelect(SelectBuilder builder) {
+    protected List<T> querySelect(SelectBuilder builder) {
         return db.query(new OSQLSynchQuery<T>(builder.build()));
     }
 
