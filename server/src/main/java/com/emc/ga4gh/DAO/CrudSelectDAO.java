@@ -19,8 +19,4 @@ public interface CrudSelectDAO<T extends Entity> {
 
     void delete(T persistentObject);
 
-    SelectBuilder getSelectBuilder();
-
-    List<T> querySelect(SelectBuilder builder);
-
 }

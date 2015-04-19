@@ -42,7 +42,7 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
 
         List<T> result = querySelect(selectBuilder);
         if (result.size() > 0) {
-            return Optional.ofNullable((T) result.get(0));
+            return Optional.ofNullable(result.get(0));
         } else return Optional.empty();
     }
 
@@ -58,13 +58,11 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
         db.delete(persistentObject);
     }
 
-    @Override
-    public SelectBuilder getSelectBuilder() {
+    private SelectBuilder getSelectBuilder() {
         return new SelectBuilder(getEntityName());
     }
 
-    @Override
-    public List<T> querySelect(SelectBuilder builder) {
+    private List<T> querySelect(SelectBuilder builder) {
         return db.query(new OSQLSynchQuery<T>(builder.build()));
     }
 
