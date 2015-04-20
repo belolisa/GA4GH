@@ -45,6 +45,5 @@ public class UploadController {
                 bean.referenceIndexer.index(fullPath);
                 break;
         }
-        System.out.println("Hello World!");
     }
 }

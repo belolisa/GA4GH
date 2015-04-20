@@ -63,8 +63,6 @@ public class ReadDAOTest {
         read.setPath(customPath);
         rd.update(read);
 
-        System.out.println("read.getRid() = " + read.getRid());
-
         Read readRead = rd.read(read.getRid()).get();
         assertEquals(readRead.getPath(), customPath);
     }

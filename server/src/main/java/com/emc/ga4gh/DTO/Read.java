@@ -25,6 +25,7 @@ public class Read implements Entity {
     private int numberInFile;
 
     private String referenceName;
+
     private Integer referenceId;
 
     @Override

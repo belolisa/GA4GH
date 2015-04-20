@@ -3,6 +3,7 @@ package com.emc.ga4gh.DAO.orient.object;
 import com.emc.ga4gh.DAO.OTransacrional;
 import com.emc.ga4gh.DAO.CrudSelectDAO;
 import com.emc.ga4gh.DAO.builder.SelectBuilder;
+import com.emc.ga4gh.DAO.builder.SelectBuilderImpl;
 import com.emc.ga4gh.DTO.Entity;
 import com.emc.ga4gh.spring.aop.logger.Log;
 import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
@@ -55,7 +56,7 @@ public abstract class AbstractObjectDAO<T extends Entity> implements CrudSelectD
     }
 
     protected SelectBuilder getSelectBuilder() {
-        return new SelectBuilder(getCollectionName());
+        return new SelectBuilderImpl(getCollectionName());
     }
 
     protected List<T> querySelect(SelectBuilder builder) {

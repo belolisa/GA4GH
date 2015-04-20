@@ -2,10 +2,10 @@ package com.emc.ga4gh.DAO.orient.object;
 
 import com.emc.ga4gh.DAO.ReadDAO;
 import com.emc.ga4gh.DAO.builder.SelectBuilder;
+import com.emc.ga4gh.DAO.builder.SelectBuilderImpl;
 import com.emc.ga4gh.DTO.Read;
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,9 +23,9 @@ public class ReadObjectDAO extends AbstractObjectDAO<Read> implements ReadDAO {
 
     @Override
     public List<Read> findIncOrdered(String referenceId, String referenceName, Long start, Long end, List<String> readGroupIds) {
-        SelectBuilder builder = (SelectBuilder) new SelectBuilder("Read")
-                .setObjectParameterInList("readGroupId", Arrays.asList(readGroupIds));
-        builder.setObjectParameter("alignmentStart", ">=", String.valueOf(start));
+        SelectBuilder builder = (SelectBuilder) new SelectBuilderImpl("Read")
+                .setObjectParameterInList("readGroupId", readGroupIds)
+                .setObjectParameter("alignmentStart", ">=", String.valueOf(start));
         if (end != null) {
             builder.setObjectParameter("alignmentEnd", "<=", String.valueOf(end))
                     .setObjectParameter("alignmentEnd", ">=", String.valueOf(start))
@@ -37,6 +37,7 @@ public class ReadObjectDAO extends AbstractObjectDAO<Read> implements ReadDAO {
         if (referenceName != null) {
             builder.setObjectParameterEquals("referenceName", referenceName);
         }
+        builder.setOrder("numberInFile");
 
         return querySelect(builder);
     }

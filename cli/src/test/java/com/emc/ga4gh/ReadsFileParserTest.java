@@ -20,6 +20,5 @@ public class ReadsFileParserTest {
     @Test
     public void testSearch() throws Exception {
         List<Read> search = fileReadsSearcher.parse();
-        System.out.println(search);
     }
 }
